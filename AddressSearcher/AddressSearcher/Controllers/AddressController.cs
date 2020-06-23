@@ -17,7 +17,7 @@ namespace AddressSearcher.Controllers
 
         public ActionResult Search(string address)
         {
-            string test = address;
+            //string test = address;
 
             var addressSearch = new SearchAddress();
             var foundAddresses = addressSearch.find(address);
@@ -25,6 +25,15 @@ namespace AddressSearcher.Controllers
             // pass array of addresses into view
             // NEED TO do some sort of print statement here so i can see whether the address is being passed through or not
             return View(foundAddresses); //returns list of address objects to view
+        }
+
+        public ActionResult Closest(string address)
+        {
+            //string test = address;
+
+            var foundAddress = new ClosestAddresses();
+            var closestAddresses = foundAddress.calculate(address);
+            return View(closestAddresses);
         }
     }
 }

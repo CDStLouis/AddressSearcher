@@ -125,6 +125,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="helpers\ClosestAddresses.cs" />
     <Compile Include="helpers\SearchAddress.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -167,6 +168,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Address\Index.cshtml" />
     <Content Include="Views\Address\Search.cshtml" />
+    <Content Include="Views\Address\Closest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
