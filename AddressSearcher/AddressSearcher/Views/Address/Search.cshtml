@@ -1,0 +1,31 @@
+﻿@model IEnumerable<AddressSearcher.Models.Address>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search</h2>
+
+@if (!Model.Any())
+{
+    <p>No Results Found</p>
+}
+else
+{
+    <table class="table	table-bordered	table-hover">
+        <thead>
+            <tr>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var address in Model)
+            {
+                <tr>
+                    <td>@address.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
