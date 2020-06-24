@@ -30,7 +30,6 @@ namespace AddressSearcher.helpers
                     List<Address> currentTenClosest = tenClosest;
                     foreach (Address shortlist in currentTenClosest)
                     {
-                        // if address distance larger than shortlist distance replace
                         if ( Distance(address, searchInput) < Distance(shortlist, searchInput) )
                         {
                             tenClosest[tenClosest.FindIndex(ind => ind.Equals(shortlist))] = address;
