@@ -23,7 +23,7 @@ else
             @foreach (var address in Model)
             {
             <tr>
-                <td>@Html.ActionLink(address.Name, "Closest", "Address", new { inputAddress = address.Name }, null)</td>
+                <td>@Html.ActionLink(address.Name, "Closest", "Address", new { inputAddress = address }, null)</td>
             </tr>
             }
         </tbody>

@@ -16,7 +16,7 @@ namespace AddressSearcher.helpers
             var csv = new CSVReader();
             var addresses = csv.ReadCSV();
             List<Address> first20matches = new List<Address>();
-            Regex regex = new Regex("^"+searchInput);
+            Regex regex = new Regex(searchInput);
 
             int counter = 0;
             foreach (Address address in addresses)

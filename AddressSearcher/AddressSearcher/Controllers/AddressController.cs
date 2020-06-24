@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AddressSearcher.helpers;
+using AddressSearcher.Models;
 
 namespace AddressSearcher.Controllers
 {
@@ -27,13 +28,13 @@ namespace AddressSearcher.Controllers
             return View(foundAddresses); //returns list of address objects to view
         }
 
-        public ActionResult Closest(string address)
+        public ActionResult Closest(Address address)
         {
             //string test = address;
 
-            var foundAddress = new ClosestAddresses();
-            var closestAddresses = foundAddress.Calculate(address);
-            return View(closestAddresses);
+            var closestAddresses = new ClosestAddresses();
+            var tenClosest = closestAddresses.Calculate(address);
+            return View(tenClosest);
         }
     }
 }
