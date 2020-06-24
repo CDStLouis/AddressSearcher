@@ -13,7 +13,7 @@ namespace AddressSearcher.Models
         public string City { get; set; }
         public string State { get; set; }
         public string Zip { get; set; }
-        public int Latitude { get; set; }
-        public int Longitude { get; set; }
+        public float Latitude { get; set; }
+        public float Longitude { get; set; }
     }
 }

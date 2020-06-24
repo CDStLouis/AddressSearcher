@@ -20,7 +20,7 @@ namespace AddressSearcher.Controllers
             //string test = address;
 
             var addressSearch = new SearchAddress();
-            var foundAddresses = addressSearch.find(address);
+            var foundAddresses = addressSearch.Find(address);
             // pass address into function, function returns an array of results
             // pass array of addresses into view
             // NEED TO do some sort of print statement here so i can see whether the address is being passed through or not
@@ -32,7 +32,7 @@ namespace AddressSearcher.Controllers
             //string test = address;
 
             var foundAddress = new ClosestAddresses();
-            var closestAddresses = foundAddress.calculate(address);
+            var closestAddresses = foundAddress.Calculate(address);
             return View(closestAddresses);
         }
     }

@@ -8,7 +8,7 @@ namespace AddressSearcher.helpers
 {
     public class ClosestAddresses
     {
-        public List<Address> calculate(string searchInput)
+        public List<Address> Calculate(string searchInput)
         {
             // code to find list of addresses from CSV
             // dummy code for addresses found
