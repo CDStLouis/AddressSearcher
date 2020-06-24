@@ -17,6 +17,11 @@ else
         <thead>
             <tr>
                 <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +29,11 @@ else
             {
             <tr>
                 <td>@Html.ActionLink(address.Name, "Closest", "Address", address, null)</td>
+                <td>@address.City</td>
+                <td>@address.State</td>
+                <td>@address.Zip</td>
+                <td>@address.Latitude</td>
+                <td>@address.Longitude</td>
             </tr>
             }
         </tbody>
