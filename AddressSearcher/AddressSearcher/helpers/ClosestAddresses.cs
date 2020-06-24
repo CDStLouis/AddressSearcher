@@ -6,10 +6,14 @@ namespace AddressSearcher.helpers
 {
     public class ClosestAddresses
     {
+        /*
+         * Given an Address object, return 10 closest address by Longitude and Lattitude
+         * returns List<Address>
+         */
         public List<Address> Calculate(Address searchInput)
         {
             var csv = new CSVReader();
-            var addresses = csv.ReadCSV();
+            var addresses = csv.ReadCSV("//Mac/Home/Documents/Address Searcher Project/AddressSearcher/AddressSearcher/data/Data.csv");
             List<Address> tenClosest = new List<Address>();
 
             int counter = 0;
@@ -41,6 +45,10 @@ namespace AddressSearcher.helpers
             return tenClosest;
         }
 
+        /*
+         * Given two address objects calulates distance between the two using Lattitude and Longitude
+         * returns float
+         */
         private float Distance(Address address1, Address address2)
         {
             float diffInLattitude = address1.Latitude - address2.Latitude;
