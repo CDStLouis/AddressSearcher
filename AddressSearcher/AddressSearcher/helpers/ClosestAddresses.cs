@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using AddressSearcher.Models;
-using Microsoft.Ajax.Utilities;
 
 namespace AddressSearcher.helpers
 {
@@ -14,9 +11,10 @@ namespace AddressSearcher.helpers
             var csv = new CSVReader();
             var addresses = csv.ReadCSV();
             List<Address> tenClosest = new List<Address>();
+
             int counter = 0;
 
-            foreach (Address address in addresses) //enumeration may not execute error
+            foreach (Address address in addresses)
             {
                 if (searchInput.Name == address.Name)
                 {
@@ -41,7 +39,7 @@ namespace AddressSearcher.helpers
                     }
                 }
             }
-            return tenClosest; // CURRENTLY RETURNS ALL THE ADDRESSES! FIX!!!
+            return tenClosest;
         }
 
         private float Distance(Address address1, Address address2)

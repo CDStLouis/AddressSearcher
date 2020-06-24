@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System.Web;
 using AddressSearcher.Models;
 
 namespace AddressSearcher.helpers
@@ -31,9 +26,6 @@ namespace AddressSearcher.helpers
                     counter++;
                 }
             }
-            // for loop going over every object in a list and comparing the address with a regex made from the searchInput string, showing a max of 20
-
-            //List<Address> addresses = test.Take(5).ToList();
             return first20matches;
         }
     }
