@@ -31,7 +31,7 @@ namespace AddressSearcher.Controllers
         public ActionResult Closest(Address address)
         {
             //string test = address;
-
+            var test = address;
             var closestAddresses = new ClosestAddresses();
             var tenClosest = closestAddresses.Calculate(address);
             return View(tenClosest);

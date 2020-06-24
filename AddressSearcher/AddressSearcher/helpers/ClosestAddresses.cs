@@ -16,29 +16,32 @@ namespace AddressSearcher.helpers
             List<Address> tenClosest = new List<Address>();
             int counter = 0;
 
-            foreach (Address address in addresses)
+            foreach (Address address in addresses) //enumeration may not execute error
             {
                 if (searchInput.Name == address.Name)
                 {
                     continue;
                 }
-                else if (counter != 10)
+                else if (counter < 10)
                 {
                     tenClosest.Add(address);
+                    counter++;
                 }
                 else
                 {
-                    foreach (Address shortlist in tenClosest)
+                    List<Address> currentTenClosest = tenClosest;
+                    foreach (Address shortlist in currentTenClosest)
                     {
                         // if address distance larger than shortlist distance replace
                         if ( Distance(address, searchInput) < Distance(shortlist, searchInput) )
                         {
                             tenClosest[tenClosest.FindIndex(ind => ind.Equals(shortlist))] = address;
+                            break;
                         }
                     }
                 }
             }
-            return addresses;
+            return tenClosest; // CURRENTLY RETURNS ALL THE ADDRESSES! FIX!!!
         }
 
         private float Distance(Address address1, Address address2)
@@ -47,7 +50,7 @@ namespace AddressSearcher.helpers
             float diffInLongitude = address1.Longitude - address2.Longitude;
             float distance = (float)Math.Sqrt( Math.Pow(diffInLattitude, 2) + Math.Pow(diffInLongitude, 2) );
 
-            return  distance;
+            return distance;
         }
     }
 }
