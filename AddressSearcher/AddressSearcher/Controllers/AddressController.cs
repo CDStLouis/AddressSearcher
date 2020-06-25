@@ -23,7 +23,6 @@ namespace AddressSearcher.Controllers
         //GET: Address/Closest
         public ActionResult Closest(Address address)
         {
-            var test = address;
             var closestAddresses = new ClosestAddresses();
             var tenClosest = closestAddresses.Calculate(address);
             return View(tenClosest);
