@@ -13,7 +13,7 @@
 }
 else
 {
-    <table class="table	table-bordered	table-hover">
+    <table id="addresses" class="table	table-bordered	table-hover">
         <thead>
             <tr>
                 <th>Address</th>
@@ -38,4 +38,12 @@ else
             }
         </tbody>
     </table>
+}
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#addresses").DataTable();
+        });
+    </script>
 }
