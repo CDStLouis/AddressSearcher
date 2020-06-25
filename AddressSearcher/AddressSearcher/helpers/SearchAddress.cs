@@ -11,30 +11,24 @@ namespace AddressSearcher.helpers
         public string csvPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data/Data.csv");
 
         /*
-         * Given a string, calculate list of address which contain the string and return them
+         * Given a string, calculate list of address which contain the string and returns them
          * returns List<Address>
          */
         public List<Address> Find(string searchInput)
         {
             var csv = new CSVReader();
             var addresses = csv.ReadCSV(csvPath);
-            List<Address> first20matches = new List<Address>();
+            List<Address> matches = new List<Address>();
             Regex regex = new Regex(searchInput);
 
-            int counter = 0;
             foreach (Address address in addresses)
             {
-                if (counter == 20)
+                if (regex.IsMatch(address.Name))
                 {
-                    break;
-                }
-                else if (regex.IsMatch(address.Name))
-                {
-                    first20matches.Add(address);
-                    counter++;
+                    matches.Add(address);
                 }
             }
-            return first20matches;
+            return matches;
         }
     }
 }
